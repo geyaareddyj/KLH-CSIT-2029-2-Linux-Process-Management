@@ -35,7 +35,7 @@ The expected outcome is a simple Linux-based process management system through w
 
 ```bash
 git clone https://github.com/geyaareddyj/KLH-CSIT-2029-2-Linux-Process-Management.git
-cd linux-process-management
+cd KLH-CSIT-2029-2-Linux-Process-Management
 ```
 
 ### Compile the Project
