@@ -1,0 +1,2 @@
+This is my Operating Systems Practical - Week 2.
+This file is being copied using open(), read(), write(), and close() system calls.
