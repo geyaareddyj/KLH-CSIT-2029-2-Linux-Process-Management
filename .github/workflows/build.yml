@@ -1,0 +1,24 @@
+name: Build and Run OS Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile project
+        run: gcc src/project.c -o project
+
+      - name: Run project
+        run: |
+          printf "1\n9\n" | ./project
