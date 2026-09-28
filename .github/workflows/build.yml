@@ -21,4 +21,4 @@ jobs:
 
       - name: Run project
         run: |
-          printf "1\n9\n" | ./project
+          printf "2\n9\n" | ./project
