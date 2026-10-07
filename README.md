@@ -119,37 +119,36 @@ The terminal supports:
 
 ## Project Architecture
 
-    MY OS TERMINAL
-           |
-           v
-      MAIN MENU
-           |
-    +------+------+------+
-    |             |      |
-    v             v      v
- PROCESS DEMOS  CUSTOM  HELP
-                TERMINAL
-    |             |
-    v             v
- +-----------+ +-----------+
- | Fork+Exec | | Built-ins |
- | Pipe      | | External  |
- | Termination| | Commands |
- | Zombie    | | Pipelines |
- | Orphan    | | Exit      |
- +-----------+ +-----------+
-       |             |
-       +------+------+
-              |
-              v
-       LINUX/POSIX SYSTEM CALLS
-   fork | exec | waitpid | pipe | dup2
-              |
-              v
-         LINUX KERNEL
+```mermaid
+flowchart TD
+    A[MY OS TERMINAL] --> B[MAIN MENU]
 
----
+    B --> C[PROCESS DEMOS]
+    B --> D[CUSTOM TERMINAL]
+    B --> E[HELP]
 
+    C --> C1[Fork + Exec]
+    C --> C2[Pipe]
+    C --> C3[Process Termination]
+    C --> C4[Zombie Process]
+    C --> C5[Orphan Process]
+
+    D --> D1[Built-in Commands]
+    D --> D2[External Commands]
+    D --> D3[Pipelines]
+    D --> D4[Exit]
+
+    C1 --> F[Linux / POSIX System Calls]
+    C2 --> F
+    C3 --> F
+    C4 --> F
+    C5 --> F
+    D1 --> F
+    D2 --> F
+    D3 --> F
+
+    F --> G[Linux Kernel]
+```
 ## Project Structure
 
     KLH-CSIT-2029-2-Linux-Process-Management/
