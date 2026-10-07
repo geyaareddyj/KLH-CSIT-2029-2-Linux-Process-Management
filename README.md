@@ -1,4 +1,4 @@
-# Linux Process Management and Custom OS Terminal
+# Linux Process Creation, Execution and Termination System
 
 ## Team Members
 
